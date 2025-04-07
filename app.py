@@ -38,27 +38,27 @@ def check_password_strength (password):
     if re.search (r"\d" , password):
         score += 1
     else:
-        feedback.append("❌ Password must have ** atleast one number (0-9)**. ")
+        feedback.append("❌ Password must have **atleast one number (0-9)**. ")
         
 # Special Characters
     if re.search (r"[!@#$%^&*]" , password):
         score +=1
     else:
-        feedback.append("❌ Password must have ** atleast one Special Character (!@#$%^&*) **. ")
+        feedback.append("❌ Password must have **atleast one Special Character (!@#$%^&*)**. ")
         
         
     # Display Password Strength Results
     if score == 4:
-        st.success("✅ ** Strong Password** - Your Password is secure. ")
+        st.success("✅ **Strong Password** - Your Password is secure. ")
     elif score == 3:
-        st.info("⚠️** Moderate Password** - Consider improving security by adding more passwords")
+        st.info("⚠️**Moderate Password** - Consider improving security by adding more passwords")
     else:
-        st.error("**Weak Password** - Follow the suggestion below to strength it. ")
+        st.error(" **Weak Password** - Follow the suggestion below to strength it. ")
 
 
 # Feedback
     if feedback :
-        with st.expander("🔍 **Improve your Password **. "):
+        with st.expander("🔍 **Improve your Password**. "):
             for item in feedback:
                 st.write(item) 
 password = st.text_input("Enter Your Password: " , type = "password" , help = "Ensure your password is strong 🔐") 
